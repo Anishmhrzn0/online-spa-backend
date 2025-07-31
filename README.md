@@ -50,7 +50,7 @@ Update `.env` with your database credentials:
 ```env
 PORT=5000
 NODE_ENV=development
-DATABASE_URL="postgresql://username:password@localhost:5432/aqualux_spa?schema=public"
+DATABASE_URL="postgresql:"
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 ```
 
