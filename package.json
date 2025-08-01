@@ -11,7 +11,9 @@
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
     "db:seed": "node prisma/seed.js",
-"test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
   },
   "keywords": [
     "spa",
@@ -33,6 +35,13 @@
   "devDependencies": {
     "jest": "^30.0.5",
     "nodemon": "^3.0.2",
+    "prisma": "^5.7.1",
+    "supertest": "^6.3.3",
+    "@types/jest": "^29.5.8"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
     "prisma": "^5.7.1",
     "supertest": "^7.1.4"
   }

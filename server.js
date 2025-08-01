@@ -289,10 +289,12 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`🔗 Health check: http://localhost:${PORT}/api/health`);
-});
+// Start server only if this is the main module
+if (import.meta.url === `file://${process.argv[1]}`) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`🔗 Health check: http://localhost:${PORT}/api/health`);
+  });
+}
 
 export default app; 
